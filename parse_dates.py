@@ -27,7 +27,10 @@ print(survey_data.Part2Start.describe())
 """ Parse non-standard date formats --->>> pd.to_datetime() to convert strings to dates after import.
 https://strftime.org/
 """
+# Parse datetimes and assign result back to Part2EndTime
+survey_data["Part2EndTime"] = pd.to_datetime(survey_data["Part2EndTime"], 
+                                             format="%m%d%Y %H:%M:%S")
 
-
-
+# Print first few values of Part2EndTime
+print(survey_data['Part2EndTime'].head())
 
